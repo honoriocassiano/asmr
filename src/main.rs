@@ -1,3 +1,11 @@
+mod core;
+
+use self::core::Vec3;
+
 fn main() {
-    println!("Hello, world!");
+
+
+    let vec = Vec3::new(1.0, 1.0, 1.0);
+
+    println!("Hello {}", vec);
 }
