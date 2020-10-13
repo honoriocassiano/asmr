@@ -1,7 +1,7 @@
 use std::ops;
 use std::fmt;
 use std::fmt::Display;
-use super::vec::Vec;
+use super::vec::{Vec, Sqrt};
 
 
 #[derive(Copy, Clone)]
@@ -32,13 +32,13 @@ impl<Scalar: Copy + Sqrt> Vec3<Scalar> {
 }
 
 
-impl<T> Vec for Vec3<T>
+impl<T: Sqrt> Vec for Vec3<T>
 	where T: Copy + ops::Add<Output=T> + ops::Sub<Output=T> + ops::Mul<Output=T>
 	+ ops::Div<Output=T> {
 	type Scalar = T;
 
 	fn length(&self) -> Self::Scalar {
-		self.squared_length().sqrt()
+		self.squared_length().sq_root()
 	}
 
 	fn squared_length(&self) -> Self::Scalar {
