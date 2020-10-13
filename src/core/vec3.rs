@@ -9,7 +9,8 @@ pub struct Vec3<Scalar>(Scalar, Scalar, Scalar);
 // pub struct Vec3(Scalar, Scalar, Scalar);
 
 
-impl<Scalar: Copy + Sqrt> Vec3<Scalar> {
+#[allow(dead_code)]
+impl<Scalar: Copy> Vec3<Scalar> {
 	pub fn new(x: Scalar, y: Scalar, z: Scalar) -> Self {
 		Self(x, y, z)
 	}
